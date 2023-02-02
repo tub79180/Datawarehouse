@@ -1,0 +1,9 @@
+{
+	"name": "Warehouse-Dev",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e9f3dce0-bd03-4d83-9ed8-e92a7ddb0c96",
+		"tenantId": "716e81ef-b522-4473-8e31-10bd02ccf6e5"
+	}
+}
