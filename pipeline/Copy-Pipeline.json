@@ -6,7 +6,14 @@
 			{
 				"name": "Copy data",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -18,8 +25,23 @@
 				"typeProperties": {
 					"enableStaging": false
 				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "var-Name",
+					"value": "test"
+				}
 			}
 		],
+		"variables": {
+			"var-Name": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
