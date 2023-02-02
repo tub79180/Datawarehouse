@@ -34,11 +34,11 @@
 						}
 					},
 					"sink": {
-						"type": "BinarySink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings",
-							"copyBehavior": "FlattenHierarchy"
-						}
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false
 				},
@@ -50,10 +50,10 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Destination",
+						"referenceName": "AzureSqlTable",
 						"type": "DatasetReference",
 						"parameters": {
-							"DestFileName": {
+							"TableName": {
 								"value": "@activity('Get FileName').output.itemName",
 								"type": "Expression"
 							}
@@ -83,6 +83,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
