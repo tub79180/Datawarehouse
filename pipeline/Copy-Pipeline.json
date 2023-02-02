@@ -34,11 +34,10 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink",
-						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false,
-						"tableOption": "autoCreate",
-						"disableMetricsCollection": false
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						}
 					},
 					"enableStaging": false
 				},
@@ -50,10 +49,10 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlTable",
+						"referenceName": "Destination",
 						"type": "DatasetReference",
 						"parameters": {
-							"TableName": {
+							"DestFileName": {
 								"value": "@activity('Get FileName').output.itemName",
 								"type": "Expression"
 							}
