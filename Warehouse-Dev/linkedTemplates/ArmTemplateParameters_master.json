@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "Warehouse-Dev"
 		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
 		"tubstorage_connectionString": {
 			"value": ""
 		},
