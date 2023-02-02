@@ -5,11 +5,20 @@
 			"referenceName": "tubstorage",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"DestFileName": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().DestFileName",
+					"type": "Expression"
+				},
 				"container": "output"
 			}
 		}
