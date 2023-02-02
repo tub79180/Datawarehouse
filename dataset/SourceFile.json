@@ -1,0 +1,18 @@
+{
+	"name": "SourceFile",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "tubstorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ALTER PROCEDURE [dbo].[SelectUnprocessedCustomerTransactions].sql",
+				"container": "input"
+			}
+		}
+	}
+}
